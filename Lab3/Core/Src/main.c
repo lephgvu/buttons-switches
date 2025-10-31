@@ -180,7 +180,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
 	getKeyInput();
 	fsm_automatic_run();
-	// fsm_manual_run();
+	fsm_manual_run();
 }
 /* USER CODE END 4 */
 
