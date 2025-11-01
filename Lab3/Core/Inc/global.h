@@ -26,7 +26,7 @@ extern int red_sec;
 extern int yellow_sec;
 extern int green_sec;
 
-extern int SevenSEGbuffer[4];
+extern int sevenSegBuffer[4];
 
 #define LED_RED			0
 #define LED_CHANGE		1

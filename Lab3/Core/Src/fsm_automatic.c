@@ -12,6 +12,7 @@ void fsm_automatic_run(){
 		clearAllLEDs();
 		clearENs();
 		clear7SEG();
+
 		red_sec = red_duration/100;
 		yellow_sec = yellow_duration/100;
 		green_sec = green_duration/100;
@@ -26,10 +27,10 @@ void fsm_automatic_run(){
 
 	case RED_GREEN:
 		setLEDs(RED_GREEN);
-		countdownUpdate(&red_sec, &green_sec);
+		countDownUpdate(&red_sec, &green_sec);
 
 		if (isTimerExpired(LED_CHANGE)){
-			resetCountdown();
+			resetCountDown();
 			setTimer(COUNTDOWN_TIMER, 100);
 			update7SegBuffer(red_sec, yellow_sec);
 			status = RED_YELLOW;
@@ -40,10 +41,10 @@ void fsm_automatic_run(){
 
 	case RED_YELLOW:
 		setLEDs(RED_YELLOW);
-		countdownUpdate(&red_sec, &yellow_sec);
+		countDownUpdate(&red_sec, &yellow_sec);
 
 		if (isTimerExpired(LED_CHANGE)){
-			resetCountdown();
+			resetCountDown();
 			setTimer(COUNTDOWN_TIMER, 100);
 			update7SegBuffer(green_sec, red_sec);
 			status = GREEN_RED;
@@ -54,10 +55,10 @@ void fsm_automatic_run(){
 
 	case GREEN_RED:
 		setLEDs(GREEN_RED);
-		countdownUpdate(&green_sec, &red_sec);
+		countDownUpdate(&green_sec, &red_sec);
 
 		if (isTimerExpired(LED_CHANGE)){
-			resetCountdown();
+			resetCountDown();
 			setTimer(COUNTDOWN_TIMER, 100);
 			update7SegBuffer(yellow_sec, red_sec);
 			status = YELLOW_RED;
@@ -68,10 +69,11 @@ void fsm_automatic_run(){
 
 	case YELLOW_RED:
 		setLEDs(YELLOW_RED);
-		countdownUpdate(&yellow_sec, &red_sec);
-		resetCountdown();
+		countDownUpdate(&yellow_sec, &red_sec);
+		resetCountDown();
+
 		if (isTimerExpired(LED_CHANGE)){
-			resetCountdown();
+			resetCountDown();
 			setTimer(COUNTDOWN_TIMER, 100);
 			update7SegBuffer(red_sec, green_sec);
 			status = RED_GREEN;
@@ -97,7 +99,7 @@ void modeChangeCheck(){
 	}
 }
 
-void countdownUpdate(int *light1, int *light2) {
+void countDownUpdate(int *light1, int *light2) {
     if (isTimerExpired(COUNTDOWN_TIMER)) {
         if (*light1 > 0) (*light1)--;
         if (*light2 > 0) (*light2)--;
@@ -106,7 +108,7 @@ void countdownUpdate(int *light1, int *light2) {
     }
 }
 
-void resetCountdown() {
+void resetCountDown() {
     if (red_sec <= 0) red_sec = red_duration / 100;
     if (yellow_sec <= 0) yellow_sec = yellow_duration / 100;
     if (green_sec <= 0) green_sec = green_duration / 100;

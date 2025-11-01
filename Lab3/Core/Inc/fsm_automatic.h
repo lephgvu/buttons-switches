@@ -11,8 +11,8 @@
 #include "global.h"
 
 void fsm_automatic_run();
-void countdownUpdate(int *light1, int *light2);
-void resetCountdown();
+void countDownUpdate(int *light1, int *light2);
+void resetCountDown();
 void modeChangeCheck();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */

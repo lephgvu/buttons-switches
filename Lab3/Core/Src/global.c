@@ -17,7 +17,7 @@ int red_sec;
 int yellow_sec;
 int green_sec;
 
-int SevenSEGbuffer[4] = {0};
+int sevenSegBuffer[4] = {0};
 
 
 

@@ -106,10 +106,10 @@ void turnAll7SEG_2(){
 
 // ------------------ update7SegBuffer() ------------------//
 void update7SegBuffer(int timer, int mode){
-	SevenSEGbuffer[0] = timer/10;
-	SevenSEGbuffer[1] = timer%10;
-	SevenSEGbuffer[2] = mode/10;
-	SevenSEGbuffer[3] = mode%10;
+	sevenSegBuffer[0] = timer/10;
+	sevenSegBuffer[1] = timer%10;
+	sevenSegBuffer[2] = mode/10;
+	sevenSegBuffer[3] = mode%10;
 }
 
 
@@ -199,22 +199,22 @@ void update7SEG(int index){
 	switch (index){
 		case 0:
 			HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
-			display7SEG(1, SevenSEGbuffer[index]);
+			display7SEG(1, sevenSegBuffer[index]);
 			break;
 
 		case 1:
 			HAL_GPIO_WritePin(GPIOA, EN1_Pin, GPIO_PIN_RESET);
-			display7SEG(1, SevenSEGbuffer[index]);
+			display7SEG(1, sevenSegBuffer[index]);
 			break;
 
 		case 2:
 			HAL_GPIO_WritePin(GPIOA, EN2_Pin, GPIO_PIN_RESET);
-			display7SEG(2, SevenSEGbuffer[index]);
+			display7SEG(2, sevenSegBuffer[index]);
 			break;
 
 		case 3:
 			HAL_GPIO_WritePin(GPIOA, EN3_Pin, GPIO_PIN_RESET);
-			display7SEG(2, SevenSEGbuffer[index]);
+			display7SEG(2, sevenSegBuffer[index]);
 			break;
 
 		default:
