@@ -22,7 +22,7 @@ Bài Lab 3 thuộc môn **Vi điều khiển (Microcontroller Systems)**, nhằm
 
 Dưới đây là sơ đồ FSM tổng thể của hệ thống đèn giao thông:
 
-![FSM](<img width="1052" height="653" alt="lab3fsm" src="https://github.com/user-attachments/assets/0de02144-540c-4054-afd9-b2d6a7c34aaf" />)
+<img width="1052" height="653" alt="lab3fsm" src="https://github.com/user-attachments/assets/0de02144-540c-4054-afd9-b2d6a7c34aaf" />
 
 ### 🔹 Giải thích FSM
 - **Mode 1 (Normal)**: hệ thống hoạt động tự động, luân phiên các pha:
@@ -45,7 +45,7 @@ Các nút điều khiển:
 
 Hệ thống được mô phỏng trên Proteus 8 với vi điều khiển **STM32F103C6**:
 
-![Proteus](<img width="1259" height="886" alt="proteus" src="https://github.com/user-attachments/assets/11d0ac69-747b-42d7-8aa7-7ae7b5e24f3d" />)
+<img width="1259" height="886" alt="proteus" src="https://github.com/user-attachments/assets/11d0ac69-747b-42d7-8aa7-7ae7b5e24f3d" />
 
 ### 🧾 Mô tả phần cứng:
 - **6 LED giao thông** (RED, YELLOW, GREEN) cho 2 hướng.
@@ -59,7 +59,7 @@ Hệ thống được mô phỏng trên Proteus 8 với vi điều khiển **STM
 
 Cấu hình trong **STM32CubeIDE (.ioc):**
 
-![STM32 pinout](<img width="629" height="580" alt="lab3" src="https://github.com/user-attachments/assets/61f6b267-e683-474f-8d65-53e3b8a5b2ca" />)
+<img width="629" height="580" alt="lab3" src="https://github.com/user-attachments/assets/61f6b267-e683-474f-8d65-53e3b8a5b2ca" />
 
 
 | Thành phần | GPIO | Chức năng |
